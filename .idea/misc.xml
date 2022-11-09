@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/app_list_title_color.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/bg_855bd3_24dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_fef1be_12dp.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/bg_fff_24dp.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/bg_fff_8dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_fffffd_16dp.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/bg_ffffff_24dp.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/pwd_title_color.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/layout/activity_app_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_set.xml" value="0.22192028985507245" />
+        <entry key="app/src/main/res/layout/activity_set_pwd.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_web.xml" value="0.22192028985507245" />
+        <entry key="app/src/main/res/layout/dialog_permission.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_pwd_fail.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/dialog_set_pwd_success.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/fragment_installed.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/fragment_locked.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/layout_app_item.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/layout_keyboard_item.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/layout_pwd_item.xml" value="0.16077898550724637" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

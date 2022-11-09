@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PurpleApplock</string>
+    <string name="look_app_permission">To use the application lock function, you need to obtain the permission of "View Application Usage"</string>
+    <string name="overlay_permission">To use the application locking function, you need to obtain the permission of "Floating Window"</string>
+    <string name="reset_pwd">Do you want to reset your password?\nif you reset the password, all currently encrypted data will also be deleted!</string>
+    <string name="sure_reset">All currently encrypted data will also be deleted!\nAre you sure?</string>
+</resources>
