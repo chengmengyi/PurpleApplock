@@ -5,7 +5,10 @@
       <map>
         <entry key="app/src/main/res/drawable/app_list_title_color.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/bg_855bd3_24dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_9570d7_16dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_ad_tag.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_fef1be_12dp.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/bg_fff_16dp.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_fff_24dp.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/bg_fff_8dp.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_fffffd_16dp.xml" value="0.26851851851851855" />
@@ -23,7 +26,9 @@
         <entry key="app/src/main/res/layout/fragment_installed.xml" value="0.16077898550724637" />
         <entry key="app/src/main/res/layout/fragment_locked.xml" value="0.16077898550724637" />
         <entry key="app/src/main/res/layout/layout_app_item.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/layout_home_native.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_keyboard_item.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/layout_native2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_pwd_item.xml" value="0.16077898550724637" />
       </map>
     </option>

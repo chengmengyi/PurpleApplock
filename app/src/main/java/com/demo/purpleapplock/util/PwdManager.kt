@@ -4,6 +4,7 @@ import com.tencent.mmkv.MMKV
 
 object PwdManager {
     var pwdCheckNum=3
+    var lockClickNum=0
 
     fun canJumpAppListPage()= getPwd().isNotEmpty()
 
@@ -18,5 +19,11 @@ object PwdManager {
 
     fun addPwdCheckNum(){
         pwdCheckNum--
+    }
+
+    fun checkCanShowLockAd():Boolean{
+        val b = lockClickNum % 5 == 0
+        printLog("kkkkk==$b===${lockClickNum}")
+        return b
     }
 }

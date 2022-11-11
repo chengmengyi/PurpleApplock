@@ -5,6 +5,8 @@ import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.demo.purpleapplock.R
+import com.demo.purpleapplock.ad.AdManager
+import com.demo.purpleapplock.ad.ShowHome
 import com.demo.purpleapplock.adapter.ViewPagerAdapter
 import com.demo.purpleapplock.base.BasePage
 import com.demo.purpleapplock.interfaces.IUpdateAppList
@@ -14,7 +16,8 @@ import com.demo.purpleapplock.page.lock.fragment.LockedFragment
 import kotlinx.android.synthetic.main.activity_app_list.*
 
 class AppListPage: BasePage(R.layout.activity_app_list),IUpdateAppList {
-    val list= arrayListOf<Fragment>()
+    private val list= arrayListOf<Fragment>()
+    private val show by lazy { ShowHome(AdManager.LOCK_HOME,this) }
 
     override fun initView() {
         immersionBar.statusBarView(view_top).init()
@@ -94,5 +97,15 @@ class AppListPage: BasePage(R.layout.activity_app_list),IUpdateAppList {
         }catch (e:Exception){
 
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        show.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        show.stopShow()
     }
 }

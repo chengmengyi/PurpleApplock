@@ -43,12 +43,8 @@ dependencies {
     implementation "com.airbnb.android:lottie:4.2.2"
     implementation project(':core')
     implementation("com.blankj:utilcodex:1.31.0")
-//    implementation("com.google.firebase:firebase-config-ktx")
-//    implementation 'com.google.firebase:firebase-analytics-ktx'
-//    implementation(platform("com.google.firebase:firebase-bom:29.3.1"))
-//    implementation("com.google.android.gms:play-services-ads:21.1.0")
-//    implementation("org.greenrobot:eventbus:3.3.1")
-//    implementation 'com.lzy.net:okgo:3.0.4'
-//    //
-//    implementation "com.android.installreferrer:installreferrer:2.2"
+    implementation("com.google.firebase:firebase-config-ktx")
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation(platform("com.google.firebase:firebase-bom:29.3.1"))
+    implementation("com.google.android.gms:play-services-ads:21.1.0")
 }

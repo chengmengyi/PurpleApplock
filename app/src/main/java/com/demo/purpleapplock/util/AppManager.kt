@@ -16,6 +16,7 @@ object AppManager {
 
     fun getInstalledAppList(context: Context){
         getLockedAppList()
+        val packageName = context.packageName
         GlobalScope.launch {
             val packageManager: PackageManager = context.packageManager
             val list = packageManager.getInstalledPackages(0)
@@ -31,10 +32,12 @@ object AppManager {
                 if (flags and ApplicationInfo.FLAG_SYSTEM != 0) {
 
                 } else {
-                    if (bean.locked){
-                        lockedAppList.add(bean)
-                    }else{
-                        unLockAppList.add(bean)
+                    if (bean.packageName!=packageName){
+                        if (bean.locked){
+                            lockedAppList.add(bean)
+                        }else{
+                            unLockAppList.add(bean)
+                        }
                     }
                 }
             }

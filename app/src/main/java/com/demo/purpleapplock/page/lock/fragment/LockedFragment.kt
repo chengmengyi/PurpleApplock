@@ -13,14 +13,24 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.purpleapplock.R
+import com.demo.purpleapplock.ad.AdManager
+import com.demo.purpleapplock.ad.ShowLock
 import com.demo.purpleapplock.adapter.AppListAdapter
 import com.demo.purpleapplock.bean.AppInfoBean
 import com.demo.purpleapplock.interfaces.IUpdateAppList
 import com.demo.purpleapplock.util.AppManager
+import com.demo.purpleapplock.util.PwdManager
 import com.demo.purpleapplock.util.show
 import kotlinx.android.synthetic.main.fragment_locked.*
 
 class LockedFragment:Fragment() {
+    private var clickInfo:AppInfoBean?=null
+    private val show by lazy { ShowLock(AdManager.LOCK,requireActivity()){
+        updateInfo()
+        if(it){
+            AdManager.load(AdManager.LOCK)
+        }
+    } }
     private var iUpdateAppList: IUpdateAppList?=null
     private val appListAdapter by lazy { AppListAdapter(requireContext(),AppManager.lockedAppList){ clickItem(it) } }
 
@@ -48,7 +58,19 @@ class LockedFragment:Fragment() {
     }
 
     private fun clickItem(appInfoBean: AppInfoBean){
-        AppManager.clickApp(appInfoBean)
+        clickInfo=appInfoBean
+        PwdManager.lockClickNum++
+        if(PwdManager.checkCanShowLockAd()){
+            show.show()
+        }else{
+            updateInfo()
+        }
+    }
+
+    private fun updateInfo(){
+        clickInfo?.let {
+            AppManager.clickApp(it)
+        }
         appListAdapter.notifyDataSetChanged()
         iUpdateAppList?.updateInstalledList()
     }

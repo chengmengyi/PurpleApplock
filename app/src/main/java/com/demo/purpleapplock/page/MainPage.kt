@@ -10,26 +10,50 @@ import android.view.animation.LinearInterpolator
 import androidx.core.animation.doOnEnd
 import com.blankj.utilcode.util.ActivityUtils
 import com.demo.purpleapplock.R
+import com.demo.purpleapplock.ad.AdManager
+import com.demo.purpleapplock.ad.AdNumManager
+import com.demo.purpleapplock.ad.ShowOpen
 import com.demo.purpleapplock.base.BasePage
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainPage : BasePage(R.layout.activity_main) {
     private var valueAnimator:ValueAnimator?=null
     private var objectAnimator: ObjectAnimator?=null
+    private val show by lazy { ShowOpen(AdManager.OPEN,this){ jumpToHome() } }
 
     override fun initView() {
+        AdNumManager.readLocalNum()
+        load()
         animator()
+    }
+
+    private fun load(){
+        AdManager.load(AdManager.OPEN)
+        AdManager.load(AdManager.HOME)
+        AdManager.load(AdManager.LOCK_HOME)
+        AdManager.load(AdManager.LOCK)
     }
 
     private fun animator(){
         valueAnimator=ValueAnimator.ofInt(0, 100).apply {
-            duration=3000L
+            duration=10000L
             interpolator = LinearInterpolator()
             addUpdateListener {
                 val progress = it.animatedValue as Int
                 tv_progress.text="$progress%"
+                val pro = (10 * (progress / 100.0F)).toInt()
+                if (pro in 2..9){
+                    show.show{ b->
+                        stopAnimator()
+                        tv_progress.text="100%"
+                        if(b){
+                            jumpToHome()
+                        }
+                    }
+                }else if (pro>=10){
+                    jumpToHome()
+                }
             }
-            doOnEnd { jumpToHome() }
             start()
         }
 

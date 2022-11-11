@@ -6,8 +6,8 @@ import com.demo.purpleapplock.util.height
 import com.gyf.immersionbar.ImmersionBar
 
 abstract class BasePage(private val layoutId:Int):AppCompatActivity() {
+    var resume=false
     protected lateinit var immersionBar: ImmersionBar
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,4 +23,19 @@ abstract class BasePage(private val layoutId:Int):AppCompatActivity() {
     }
 
     abstract fun initView()
+
+    override fun onResume() {
+        super.onResume()
+        resume=true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        resume=false
+    }
+
+    override fun onStop() {
+        super.onStop()
+        resume=false
+    }
 }

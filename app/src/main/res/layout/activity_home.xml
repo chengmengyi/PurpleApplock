@@ -54,4 +54,10 @@
         app:layout_constraintLeft_toLeftOf="@id/iv_lock"
         app:layout_constraintTop_toTopOf="@id/iv_lock"
         app:layout_constraintBottom_toBottomOf="@id/iv_lock"/>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:layout_margin="12dp"
+        layout="@layout/layout_home_native"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
