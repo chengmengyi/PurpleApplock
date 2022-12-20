@@ -15,7 +15,9 @@ import kotlinx.coroutines.launch
 
 object AcRegister {
     var purpleFront=true
-    var refreshNativeAd=true
+    var doABPlan=true
+    //0冷启动 1热启动 2已启动
+    var loadType=0
     private var jumpToMain=false
     private var job: Job?=null
 
@@ -54,6 +56,12 @@ object AcRegister {
     private fun start(activity: Activity){
         purpleFront=true
         if (jumpToMain){
+            loadType=1
+            try {
+                doABPlan=ActivityUtils.getTopActivity().javaClass.name==HomePage::class.java.name
+            }catch (e:Exception){
+
+            }
             if (ActivityUtils.isActivityExistsInStack(HomePage::class.java)){
                 activity.startActivity(Intent(activity, MainPage::class.java))
             }
@@ -63,7 +71,6 @@ object AcRegister {
 
     private fun stop(){
         purpleFront=false
-        refreshNativeAd=true
         job= GlobalScope.launch {
             delay(3000L)
             jumpToMain=true

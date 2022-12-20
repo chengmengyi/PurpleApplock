@@ -2,6 +2,8 @@ package com.demo.purpleapplock.dialog
 
 import com.demo.purpleapplock.R
 import com.demo.purpleapplock.base.BaseDialog
+import com.demo.purpleapplock.util.SetPointManager
+import com.demo.purpleapplock.util.show
 import kotlinx.android.synthetic.main.dialog_permission.*
 
 //1查看app使用情况 2浮窗权限  3是否重置密码 4确认重置
@@ -15,9 +17,12 @@ class SureCancelDialog(
             1->R.string.look_app_permission
             2->R.string.overlay_permission
             3->R.string.reset_pwd
+            4->R.string.sure_reset
             else->R.string.sure_reset
         })
-        tv_cancel.setOnClickListener { dismiss() }
+        tv_cancel.setOnClickListener {
+            dismiss()
+        }
 
         tv_sure.setOnClickListener {
             clickSure.invoke()

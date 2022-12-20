@@ -20,6 +20,11 @@ object AdManager {
     const val HOME="purple_home"
     const val LOCK_HOME="purple_lock_home"
     const val LOCK="purple_lock"
+    const val VPN_HOME="pa_vpnhome_n"
+    const val VPN_RESULT="pa_vpnresult_n"
+    const val VPN_CONNECT="pa_vpnlink_i"
+    const val VPN_BACK="pa_server_i"
+    const val HOME_CLICK="pa_homeclick_i"
 
     var showingOpen=false
     private val loading= arrayListOf<String>()
@@ -74,7 +79,7 @@ object AdManager {
     private fun startLoad(type:String,localBean: LocalBean,result:(admob:AdBean?)->Unit){
         printLog("load $type,--->${localBean.purple_id},${localBean.purple_sort},${localBean.purple_type}")
         when(localBean.purple_type){
-            "k"->{
+            "o"->{
                 loadOpen(type,localBean,result)
             }
             "c"->{
@@ -183,4 +188,17 @@ object AdManager {
     }
 
     fun getAd(type: String)= adMap[type]?.ad
+
+    fun removeAll(){
+        adMap.clear()
+        loading.clear()
+        load(OPEN)
+        load(HOME)
+        load(LOCK_HOME)
+        load(LOCK)
+        load(VPN_HOME)
+        load(VPN_RESULT)
+        load(VPN_CONNECT)
+        load(HOME_CLICK)
+    }
 }

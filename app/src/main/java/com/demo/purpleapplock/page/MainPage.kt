@@ -8,12 +8,16 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.animation.LinearInterpolator
 import androidx.core.animation.doOnEnd
+import com.android.installreferrer.api.InstallReferrerClient
+import com.android.installreferrer.api.InstallReferrerStateListener
 import com.blankj.utilcode.util.ActivityUtils
 import com.demo.purpleapplock.R
 import com.demo.purpleapplock.ad.AdManager
 import com.demo.purpleapplock.ad.AdNumManager
 import com.demo.purpleapplock.ad.ShowOpen
 import com.demo.purpleapplock.base.BasePage
+import com.demo.purpleapplock.util.RefreshManager
+import com.tencent.mmkv.MMKV
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainPage : BasePage(R.layout.activity_main) {
@@ -22,6 +26,8 @@ class MainPage : BasePage(R.layout.activity_main) {
     private val show by lazy { ShowOpen(AdManager.OPEN,this){ jumpToHome() } }
 
     override fun initView() {
+        readReferrer()
+        RefreshManager.resetAll()
         AdNumManager.readLocalNum()
         load()
         animator()
@@ -32,6 +38,10 @@ class MainPage : BasePage(R.layout.activity_main) {
         AdManager.load(AdManager.HOME)
         AdManager.load(AdManager.LOCK_HOME)
         AdManager.load(AdManager.LOCK)
+        AdManager.load(AdManager.VPN_HOME)
+        AdManager.load(AdManager.VPN_RESULT)
+        AdManager.load(AdManager.VPN_CONNECT)
+        AdManager.load(AdManager.HOME_CLICK)
     }
 
     private fun animator(){
@@ -71,6 +81,33 @@ class MainPage : BasePage(R.layout.activity_main) {
             startActivity(Intent(this, HomePage::class.java))
         }
         finish()
+    }
+
+    private fun readReferrer(){
+        val decodeString = MMKV.defaultMMKV().decodeString("referrer", "")?:""
+        if(decodeString.isEmpty()){
+            val referrerClient = InstallReferrerClient.newBuilder(application).build()
+            referrerClient.startConnection(object : InstallReferrerStateListener {
+                override fun onInstallReferrerSetupFinished(responseCode: Int) {
+                    try {
+                        referrerClient.endConnection()
+                        when (responseCode) {
+                            InstallReferrerClient.InstallReferrerResponse.OK -> {
+                                val installReferrer = referrerClient.installReferrer.installReferrer
+                                MMKV.defaultMMKV().encode("referrer",installReferrer)
+                            }
+                            else->{
+
+                            }
+                        }
+                    } catch (e: Exception) {
+
+                    }
+                }
+                override fun onInstallReferrerServiceDisconnected() {
+                }
+            })
+        }
     }
 
     private fun stopAnimator(){

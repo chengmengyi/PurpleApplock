@@ -3,33 +3,50 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-xxhdpi/connect_server_progress.xml" value="0.2777777777777778" />
         <entry key="app/src/main/res/drawable/app_list_title_color.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/bg_855bd3_24dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_855bd3_30dp.xml" value="0.2777777777777778" />
         <entry key="app/src/main/res/drawable/bg_9570d7_16dp.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_ad_tag.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_ad_tag2.xml" value="0.28425925925925927" />
+        <entry key="app/src/main/res/drawable/bg_b994fd_30dp_stoke.xml" value="0.2777777777777778" />
         <entry key="app/src/main/res/drawable/bg_fef1be_12dp.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/bg_fff_16dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_fff_20dp.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/drawable/bg_fff_24dp.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/bg_fff_8dp.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_fffffd_16dp.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/bg_ffffff_24dp.xml" value="0.26851851851851855" />
         <entry key="app/src/main/res/drawable/pwd_title_color.xml" value="0.26851851851851855" />
+        <entry key="app/src/main/res/drawable/server_choose_selector.xml" value="0.2777777777777778" />
+        <entry key="app/src/main/res/drawable/server_item_color_selector.xml" value="0.2777777777777778" />
+        <entry key="app/src/main/res/drawable/server_item_selector.xml" value="0.2777777777777778" />
+        <entry key="app/src/main/res/drawable/server_status_color_selector.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/layout/activity_app_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_choose_server.xml" value="0.1716485507246377" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_result.xml" value="0.1716485507246377" />
+        <entry key="app/src/main/res/layout/activity_server_Home.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/activity_server_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_set.xml" value="0.22192028985507245" />
         <entry key="app/src/main/res/layout/activity_set_pwd.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_web.xml" value="0.22192028985507245" />
+        <entry key="app/src/main/res/layout/dialog_ir_lomit.xml" value="0.18432971014492755" />
         <entry key="app/src/main/res/layout/dialog_permission.xml" value="0.25" />
         <entry key="app/src/main/res/layout/dialog_pwd_fail.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/dialog_set_pwd_success.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/dialog_vpn.xml" value="0.1793478260869565" />
         <entry key="app/src/main/res/layout/fragment_installed.xml" value="0.16077898550724637" />
         <entry key="app/src/main/res/layout/fragment_locked.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/item_server.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_app_item.xml" value="0.16077898550724637" />
         <entry key="app/src/main/res/layout/layout_home_native.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_keyboard_item.xml" value="0.16077898550724637" />
         <entry key="app/src/main/res/layout/layout_native2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_pwd_item.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/layout_result_native.xml" value="0.1793478260869565" />
       </map>
     </option>
   </component>

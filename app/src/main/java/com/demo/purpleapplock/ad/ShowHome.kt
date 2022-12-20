@@ -11,6 +11,7 @@ import com.blankj.utilcode.util.SizeUtils
 import com.demo.purpleapplock.R
 import com.demo.purpleapplock.base.BasePage
 import com.demo.purpleapplock.util.AcRegister
+import com.demo.purpleapplock.util.RefreshManager
 import com.demo.purpleapplock.util.show
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
@@ -91,15 +92,11 @@ class ShowHome(
         AdNumManager.addShow()
         AdManager.remove(type)
         AdManager.load(type)
-        if (notRefresh()){
-            AcRegister.refreshNativeAd=false
-        }
+        RefreshManager.setBool(type,false)
     }
 
-    private fun showCover()=type==AdManager.HOME
+    private fun showCover()=type==AdManager.HOME || type==AdManager.VPN_HOME || type == AdManager.VPN_RESULT
 
-    private fun notRefresh()=type==AdManager.HOME
-    
     fun stopShow(){
         job?.cancel()
         job=null

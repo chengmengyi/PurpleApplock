@@ -172,8 +172,8 @@ class VpnService : BaseVpnService(), BaseService.Interface {
                 .addDnsServer(PRIVATE_VLAN4_ROUTER)
 
         if (profile.ipv6) builder.addAddress(PRIVATE_VLAN6_CLIENT, 126)
-
-        Rao.loadConfig(builder,packageName)
+        val me = packageName
+        builder.addDisallowedApplication(me)
 
 //        if (profile.proxyApps) {
 //            val me = packageName

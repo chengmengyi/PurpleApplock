@@ -45,6 +45,12 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".page.WebPage"
             android:screenOrientation="portrait"/>
+        <activity android:name=".page.server.ResultPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".page.server.ChooseServerPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".page.server.ServerHomePage"
+            android:screenOrientation="portrait"/>
 
         <service android:name=".servers.AppLockServer"
             android:exported="true"/>
